@@ -12,6 +12,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Bundled Protobuf Distribution" level="application" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.5" level="project" />
     <orderEntry type="library" name="Maven: com.google.inject:guice:4.2.2" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
@@ -44,6 +45,5 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: io.grpc:grpc-protobuf-lite:1.21.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: io.grpc:grpc-stub:1.21.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.8.0" level="project" />
-    <orderEntry type="library" name="Bundled Protobuf Distribution" level="application" />
   </component>
 </module>

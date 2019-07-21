@@ -11,7 +11,7 @@ import java.net.Socket;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
-public class ChessGameService implements GameService {
+public class DemoGameService implements GameService {
     private Injector injector = Guice.createInjector();
     private ServerSocket serverSocket;
     private Game game;
@@ -22,20 +22,20 @@ public class ChessGameService implements GameService {
     private int serviceIdleTimeoutSeconds;
     private int clientExpireTimeoutSeconds;
 
-    public ChessGameService() {
+    public DemoGameService() {
         this.logger = injector.getInstance(EvolutionLogger.class);
         this.serviceIdleTimeoutSeconds = 0;
         this.clientExpireTimeoutSeconds = 30;
         this.serviceId = UUID.randomUUID().toString();
         this.game = injector.getInstance(Game.class);
 
-        logger.info("Initializing ChessGameService id = " + this.serviceId);
+        logger.info("Initializing DemoGameService id = " + this.serviceId);
     }
 
     @Override
     public void createGameService(String serviceName, int port) {
         try {
-            logger.info("Creating ChessGameService of " + serviceName + " on port " + port);
+            logger.info("Creating DemoGameService of " + serviceName + " on port " + port);
             this.serviceName = serviceName;
             this.servicePort = port;
 
@@ -94,7 +94,7 @@ public class ChessGameService implements GameService {
         logger.info("Creating game instance");
         String gameId = UUID.randomUUID().toString();
 
-        if (this.game.createGame(gameId, "Game Created By ChessGameService")) {
+        if (this.game.createGame(gameId, "Game Created By DemoGameService")) {
             logger.info("Game instance created " + gameId);
             return true;
         } else {

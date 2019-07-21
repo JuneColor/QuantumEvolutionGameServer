@@ -7,7 +7,7 @@ import evolution.components.logger.EvolutionLogger;
 import evolution.server.ServerConstants;
 import evolution.server.http.HttpResponse;
 import evolution.service.GameService;
-import evolution.service.impl.ChessGameService;
+import evolution.service.impl.DemoGameService;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -46,11 +46,11 @@ public class RequestHandler {
 
         int port = (int) (Math.random() * 10000 + 10000);
 
-        ChessGameService chessGameService = injector.getInstance(ChessGameService.class);
-        chessGameService.createGameService("ChessGameService_" + port, port);
-        gameServiceSet.add(chessGameService);
+        DemoGameService demoGameService = injector.getInstance(DemoGameService.class);
+        demoGameService.createGameService("DemoGameService_" + port, port);
+        gameServiceSet.add(demoGameService);
 
-        logger.info("New game started on port " + port + " service name " + chessGameService.getServiceName());
+        logger.info("New game started on port " + port + " service name " + demoGameService.getServiceName());
         response.OK(exchange, "new Game service started on " + port);
     }
 
