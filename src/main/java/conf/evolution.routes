@@ -1,0 +1,14 @@
+# Routes
+
+# This is a router file of this evolution framework
+# Support GET / POST method at present
+# At present, it support only one controller (that means that you should finish your own route handler in RequestHandler
+# Structure is
+# POST  /path   methodNameInRequestHandler
+# GET   /path   methodNameInRequestHandler
+
+GET             /test                               testMethod
+
+GET             /startNewGameService                createNewGameService
+GET             /listAllGameServices                listAllGameService
+GET             /shutdownAllGameService             closeAllGameService

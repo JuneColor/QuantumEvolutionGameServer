@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package quantum.evolution.game.basic;
+
+enum GameStatus {
+    GAME_STATUS_WAITING = 0;
+    GAME_STATUS_READY = 1;
+    GAME_STATUS_PAUSED = 2;
+    GAME_STATUS_RUNNING = 3;
+    GAME_STATUS_GAME_OVER = 4;
+    GAME_STATUS_LOCKED = 5;
+}
+
+enum GameType {
+    GAME_TYPE_UNDEFINED = 0;
+}
+
+message GameLevel {
+    int32 level = 1;
+    string levelDescription = 2;
+}
+
+message Score {
+    int64 totalScore = 1;
+    int64 operationScore = 2;
+    int64 timeScore = 3;
+    int64 collectionScore = 4;
+}
+
+message GameInfo {
+    string gameId = 1;
+    string gameName = 2;
+}
